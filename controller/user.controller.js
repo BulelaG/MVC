@@ -1,5 +1,5 @@
 const db = require("../models")
-const User = db.All
+const User = db.user
 
 // GET ALL USERS 
 exports.getAll = (req, res)=>{
@@ -23,16 +23,16 @@ exports.create = async (req, res)=>{
             res.status(400).send("Cannot add without info")
             return;   
     }
-    let results;
+    // let results;
 
-    await fetch('https://randomuser.me/api/')
-            .then(res=>res.json())
-            .then(data=>{
-            console.log(results=data.results[0].email)})
+    // await fetch('https://randomuser.me/api/')
+    //         .then(res=>res.json())
+    //         .then(data=>{
+    //         console.log(results=data.results[0].email)})
 
     const user = new User ({
            fname: req.body.fname,
-           email: results,
+           email: req.body.email,
            password: req.body.password
     })
    

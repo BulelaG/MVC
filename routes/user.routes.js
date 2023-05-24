@@ -13,5 +13,5 @@ module.exports = rs => {
 
     router.delete('/:id', controller.deleteOne); // DELETE 1 USERS
 
-rs.use('/v1/users',router)  
+    rs.use('/v1/users',router)  
 }
